@@ -60,7 +60,7 @@ guide, examples and details on using the classes and methods exposed by the S22.
 
 ### Credits
 
-This library is copyright © 2013 Torben Könke.
+This library is copyright © 2013-2014 Torben Könke.
 
 
 ### License

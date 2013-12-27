@@ -5,8 +5,7 @@ namespace S22.Xmpp.Extensions {
 	/// Represents an identity of an XMPP entity as defined in XEP-0030.
 	/// </summary>
 	[Serializable]
-	// FIXME: Make internal.
-	public class Identity {
+	internal class Identity {
 		/// <summary>
 		/// The category the XMPP entity belongs to (i.e. 'client', 'server').
 		/// </summary>

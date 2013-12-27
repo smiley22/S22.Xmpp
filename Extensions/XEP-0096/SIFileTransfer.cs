@@ -78,6 +78,15 @@ namespace S22.Xmpp.Extensions {
 		}
 
 		/// <summary>
+		/// Determines whether the in-band bytestreams method should be used, even if
+		/// the preferred SOCKS5 method is available.
+		/// </summary>
+		public bool ForceInBandBytestreams {
+			get;
+			set;
+		}
+
+		/// <summary>
 		/// The event that is raised periodically for every file-transfer to
 		/// inform subscribers of the progress of the respective transfer operation.
 		/// </summary>
@@ -343,6 +352,9 @@ namespace S22.Xmpp.Extensions {
 				"http://jabber.org/protocol/ibb"
 			};
 			for (int i = 0; i < methods.Length; i++) {
+				if (ForceInBandBytestreams &&
+					methods[i] != "http://jabber.org/protocol/ibb")
+					continue;
 				if (field.Values.Contains(methods[i]))
 					return methods[i];
 			}
@@ -358,6 +370,9 @@ namespace S22.Xmpp.Extensions {
 		IEnumerable<string> GetStreamMethods() {
 			ISet<string> set = new HashSet<string>();
 			foreach (Type t in supportedMethods) {
+				// If forcing IBB, only advertise IBB to the other site.
+				if (ForceInBandBytestreams && t != typeof(InBandBytestreams))
+					continue;
 				var ext = im.GetExtension(t);
 				if (ext != null) {
 					foreach (string ns in ext.Namespaces)
@@ -445,7 +460,6 @@ namespace S22.Xmpp.Extensions {
 					ext.Transfer(session);
 				} catch(Exception e) {
 					// Nothing to do here.
-					Console.WriteLine(e);
 				}
 			} catch {
 				// Something went wrong. Invoke user-provided callback to let them know

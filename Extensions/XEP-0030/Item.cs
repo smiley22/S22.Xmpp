@@ -5,8 +5,7 @@ namespace S22.Xmpp.Extensions {
 	/// Represents an item of an XMPP entity as defined in XEP-0030.
 	/// </summary>
 	[Serializable]
-	// FIXME: Make internal.
-	public class Item {
+	internal class Item {
 		/// <summary>
 		/// The JID of the item.
 		/// </summary>

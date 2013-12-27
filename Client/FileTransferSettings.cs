@@ -12,6 +12,10 @@ namespace S22.Xmpp.Client {
 		/// A reference to the Socks5Bytestreams extension.
 		/// </summary>
 		Socks5Bytestreams socks5;
+		/// <summary>
+		/// A reference to the SIFileTransfer extension.
+		/// </summary>
+		SIFileTransfer siFileTransfer;
 
 		/// <summary>
 		/// Determines whether usage of a SOCKS5 proxy server is allowed.
@@ -100,8 +104,12 @@ namespace S22.Xmpp.Client {
 		/// the preferred SOCKS5 method is available.
 		/// </summary>
 		public bool ForceInBandBytestreams {
-			get;
-			set;
+			get {
+				return siFileTransfer.ForceInBandBytestreams;
+			}
+			set {
+				siFileTransfer.ForceInBandBytestreams = value;
+			}
 		}
 
 		/// <summary>
@@ -109,11 +117,16 @@ namespace S22.Xmpp.Client {
 		/// </summary>
 		/// <param name="socks5">A reference to the Socks5Bytestreams
 		/// instance.</param>
+		/// <param name="siFileTransfer">A reference to the SIFileTransfer
+		/// instance.</param>
 		/// <exception cref="ArgumentNullException">The socks5 parameter is
 		/// null.</exception>
-		internal FileTransferSettings(Socks5Bytestreams socks5) {
+		internal FileTransferSettings(Socks5Bytestreams socks5,
+			SIFileTransfer siFileTransfer) {
 			socks5.ThrowIfNull("socks5");
+			siFileTransfer.ThrowIfNull("siFileTransfer");
 			this.socks5 = socks5;
+			this.siFileTransfer = siFileTransfer;
 		}
 	}
 }

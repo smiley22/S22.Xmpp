@@ -34,7 +34,7 @@ namespace S22.Xmpp.Extensions {
 		string nodeUri {
 			get {
 				// FIXME: Move this to a resource file or to assembly metadata?
-				return "http://fix.me/";
+				return "S22.Xmpp";
 			}
 		}
 

@@ -1433,7 +1433,8 @@ namespace S22.Xmpp.Client {
 			inBandBytestreams = im.LoadExtension<InBandBytestreams>();
 			userActivity = im.LoadExtension<UserActivity>();
 			socks5Bytestreams = im.LoadExtension<Socks5Bytestreams>();
-			FileTransferSettings = new FileTransferSettings(socks5Bytestreams);
+			FileTransferSettings = new FileTransferSettings(socks5Bytestreams,
+				siFileTransfer);
 			serverIpCheck = im.LoadExtension<ServerIpCheck>();
 			inBandRegistration = im.LoadExtension<InBandRegistration>();
 			chatStateNotifications = im.LoadExtension<ChatStateNotifications>();

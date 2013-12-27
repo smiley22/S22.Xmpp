@@ -492,7 +492,6 @@ namespace S22.Xmpp.Extensions {
 			return set;
 		}
 
-		// FIXME: Make private
 		/// <summary>
 		/// Retrieves an enumerable collection of th XMPP client's external IP
 		/// addresses.
@@ -503,7 +502,7 @@ namespace S22.Xmpp.Extensions {
 		/// could not be determined.</exception>
 		/// <remarks>In simple configurations this should usually yield one external
 		/// IP address only.</remarks>
-		public IEnumerable<IPAddress> GetExternalAddresses() {
+		IEnumerable<IPAddress> GetExternalAddresses() {
 			// Use a set so we don't get duplicate addresses.
 			ISet<IPAddress> set = new HashSet<IPAddress>();
 			try {
@@ -545,8 +544,7 @@ namespace S22.Xmpp.Extensions {
 		/// null.</exception>
 		/// <remarks>This is a best effort that is probably not completely fail
 		/// safe.</remarks>
-		// FIXME: Make private.
-		public bool BehindNAT(IPAddress address) {
+		bool BehindNAT(IPAddress address) {
 			address.ThrowIfNull("address");
 			// See if the specified address is assigned to one of the network interfaces
 			// of the system. If it isn't, we assume it's behind a NAT.

@@ -910,7 +910,6 @@ namespace S22.Xmpp.Im {
 				}
 				listElement.Child(item);
 			}
-			Console.WriteLine(listElement.ToXmlString());
 			Iq iq = IqRequest(IqType.Set, null, Jid,
 				Xml.Element("query", "jabber:iq:privacy").Child(listElement));
 			if (iq.Type == IqType.Error)

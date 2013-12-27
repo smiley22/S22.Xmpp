@@ -28,9 +28,10 @@ optional procotol extensions. More specifically, the following features are supp
 ### Where to get it
 
 You can always get the latest binary package on [Nuget](http://www.nuget.org/packages/S22.Xmpp) or
-download the binaries as a .zip archive from GitHub. The documentation is also available for offline
-viewing as HTML or CHM and can be downloaded from [here](http://smiley22.github.com/Downloads/S22.Xmpp.Html.Documentation.zip) 
-and [here](http://smiley22.github.com/Downloads/S22.Xmpp.Chm.Documentaton.zip), respectively.
+download the binaries as a .zip archive from [GitHub](http://smiley22.github.com/Downloads/S22.Xmpp.zip). 
+The documentation is also available for offline viewing as HTML or CHM and can be downloaded from 
+[here](http://smiley22.github.com/Downloads/S22.Xmpp.Html.Documentation.zip) and 
+[here](http://smiley22.github.com/Downloads/S22.Xmpp.Chm.Documentaton.zip), respectively.
 
 
 ### Usage & Examples

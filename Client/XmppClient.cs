@@ -420,6 +420,18 @@ namespace S22.Xmpp.Client {
 		}
 
 		/// <summary>
+		/// The event that is raised when an unrecoverable error condition occurs.
+		/// </summary>
+		public event EventHandler<Im.ErrorEventArgs> Error {
+			add {
+				im.Error += value;
+			}
+			remove {
+				im.Error -= value;
+			}
+		}
+
+		/// <summary>
 		/// Initializes a new instance of the XmppClient class.
 		/// </summary>
 		/// <param name="hostname">The hostname of the XMPP server to connect to.</param>

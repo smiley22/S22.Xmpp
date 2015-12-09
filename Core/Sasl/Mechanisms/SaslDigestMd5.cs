@@ -151,7 +151,7 @@ namespace S22.Xmpp.Core.Sasl.Mechanisms {
 			// Parse the challenge-string and construct the "response-value" from it.
 			string decoded = Encoding.ASCII.GetString(challenge);
 			NameValueCollection fields = ParseDigestChallenge(decoded);
-			string digestUri = "imap/" + fields["realm"];
+			string digestUri = "xmpp/" + fields["realm"];
 			string responseValue = ComputeDigestResponseValue(fields, Cnonce, digestUri,
 				Username, Password);
 

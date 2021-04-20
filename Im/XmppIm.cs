@@ -1483,7 +1483,7 @@ namespace S22.Xmpp.Im {
 
 			// Only raise the Message event, if the message stanza actually contains
 			// a body.
-			if(message.Data["body"] != null)
+			if (message.Data["body"] != null || message.Data["event"] != null)
 				Message.Raise(this, new MessageEventArgs(message.From, message));
 		}
 
